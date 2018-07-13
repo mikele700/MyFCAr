@@ -22,8 +22,9 @@ public class ConfigurazioneDAO {
 			pstat.setInt(1, ac.getId());
 			ResultSet rs = pstat.executeQuery();
 			while(rs.next()){
-				Configurazione conf = new Configurazione(rs.getInt("ID"));
-				restoredObjects.put(conf.getId(), conf);
+				Configurazione conf = new Configurazione(rs.getInt("ID"), SettingDAO.readListConfigurazione(rs.getInt("ID")));
+				if(!restoredObjects.containsKey(conf.getId()))
+					restoredObjects.put(conf.getId(), conf);
 				lista.add(conf);
 			}
 		} catch (SQLException e1) {

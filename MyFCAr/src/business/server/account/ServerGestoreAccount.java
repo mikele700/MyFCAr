@@ -30,7 +30,7 @@ public class ServerGestoreAccount implements IServerGestoreAccount {
 		return false;
 	}
 
-	
+	/* TEST
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -40,10 +40,12 @@ public class ServerGestoreAccount implements IServerGestoreAccount {
 			for (Iterator<Configurazione> iterator = a.getAllConfigurazione().iterator(); iterator.hasNext();) {
 				Configurazione c = iterator.next();
 				System.out.println("ID conf "+c.getId());
+				c.stampaSetting();
 			}
 			for (Iterator<Auto> iterator = a.getAllAuto().iterator(); iterator.hasNext();) {
 				Auto at = iterator.next();
 				System.out.println("ID auto "+at.getId()+" "+at.getVIN()+" "+at.getTarga()+" "+at.getModello());
+				at.stampaOptional();
 				if(at.getConfigurazioneAuto()!=null)
 					System.out.print("Conf Associata "+at.getConfigurazioneAuto().getConfigurazione().getId());
 			}
@@ -55,6 +57,6 @@ public class ServerGestoreAccount implements IServerGestoreAccount {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-	}
+	}*/
 
 }

@@ -9,9 +9,14 @@ public class SettingOptional extends Setting {
 		nome = n;
 		// TODO Auto-generated constructor stub
 	}
+	
+	public SettingOptional(Integer id, NomeOptional n){
+		super(id);
+		nome = n;
+	}
 
-	public NomeOptional getNome() {
-		return nome;
+	public String getNome() {
+		return nome.toString();
 	}
 
 	

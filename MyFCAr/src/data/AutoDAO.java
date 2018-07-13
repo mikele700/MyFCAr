@@ -22,8 +22,9 @@ public class AutoDAO {
 			pstat.setInt(1, ac.getId());
 			ResultSet rs = pstat.executeQuery();
 			while(rs.next()){
-				Auto at = new Auto(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));
-				restoredObjects.put(at.getId(), at);
+				Auto at = new Auto(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), SettingDAO.readListAuto(rs.getInt(1)));
+				if(!restoredObjects.containsKey(at.getId()))
+					restoredObjects.put(at.getId(), at);
 				lista.add(at);
 			}
 		} catch (SQLException e1) {

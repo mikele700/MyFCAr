@@ -10,8 +10,8 @@ public class SettingSerie extends Setting {
 		// TODO Auto-generated constructor stub
 	}
 
-	public NomeSerie getNome() {
-		return nome;
+	public String getNome() {
+		return nome.toString();
 	}
 
 }

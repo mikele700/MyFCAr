@@ -78,7 +78,8 @@ public class ConfigurazioneAutoDAO {
 			while(rs.next()){
 				Configurazione config = ac.getConfigurazione(rs.getInt(2));
 				ConfigurazioneAuto confat = new ConfigurazioneAuto(config, rs.getInt(1));
-				restoredObjects.put(confat.getId(), confat);
+				if(!restoredObjects.containsKey(confat.getId()))
+					restoredObjects.put(confat.getId(), confat);
 				lista.add(confat);
 				ac.getAuto(rs.getInt(1)).setConfigurazioneAuto(confat);
 			}
