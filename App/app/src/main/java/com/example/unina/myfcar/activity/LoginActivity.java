@@ -1,7 +1,9 @@
-package com.example.unina.myfcar;
+package com.example.unina.myfcar.activity;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+
+import com.example.unina.myfcar.R;
 
 public class LoginActivity extends AppCompatActivity {
 

@@ -5,17 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
-    tools:context="com.example.unina.myfcar.MainActivity">
+    tools:context="com.example.unina.myfcar.activity.MainActivity">
 
 
     <Button
         android:id="@+id/entra"
         android:layout_width="133dp"
         android:layout_height="66dp"
-        android:layout_marginTop="144dp"
+        android:layout_marginTop="188dp"
         android:text="ENTRA"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/fca_logo" />
 
