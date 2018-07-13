@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">MyFCAr</string>
+
+    <string name="benvenuto">Benvenuto in MyFCAr, l\'app su misura per te e la tua auto.\nCosa aspetti? Entra subito!</string>
+
+    <string name="login_text">Effettua il login se sei già registrato, oppure registrati</string>
+    <string name="title_activity_login2">Sign in</string>
+
+
+
+</resources>
