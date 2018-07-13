@@ -1,12 +1,15 @@
 package business.server.auto;
 
+import business.server.configurazioneauto.ConfigurazioneAuto;
+
 public class Auto {
 	private Integer id;
 	private String VIN;
 	private String targa;
 	private String modello;
+	private ConfigurazioneAuto confAssociata;
 	
-	public Auto(String v, String t, String m, Integer id){
+	public Auto(Integer id, String v, String t, String m){
 		this.VIN = new String(v);
 		this.targa = new String(t);
 		this.modello = new String(m);
@@ -32,4 +35,13 @@ public class Auto {
 	public String getModello() {
 		return new String(modello);
 	}
+	
+	public ConfigurazioneAuto getConfigurazioneAuto() {
+		return confAssociata;
+	}
+
+	public void setConfigurazioneAuto(ConfigurazioneAuto confAssociata) {
+		this.confAssociata = confAssociata;
+	}
+	
 }

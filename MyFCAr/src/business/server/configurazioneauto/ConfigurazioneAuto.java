@@ -10,6 +10,11 @@ public class ConfigurazioneAuto {
 	public ConfigurazioneAuto(Configurazione config){
 		configurazione = config;
 	}
+	
+	public ConfigurazioneAuto(Configurazione config, Integer id){
+		configurazione = config;
+		this.id = id;
+	}
 
 	public Integer getId() {
 		return id;
