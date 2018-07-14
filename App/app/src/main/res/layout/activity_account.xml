@@ -4,33 +4,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.unina.myfcar.activity.AccountActivity">
+    tools:context="com.example.unina.myfcar.activity.AccountActivity"
+    tools:layout_editor_absoluteY="81dp">
 
     <TextView
         android:id="@+id/intro_account"
-        android:layout_width="377dp"
-        android:layout_height="71dp"
+        android:layout_width="379dp"
+        android:layout_height="65dp"
+        android:layout_marginBottom="25dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginStart="19dp"
         android:text="@string/intro_account"
         android:textColor="@android:color/black"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="17dp"
-        tools:layout_editor_absoluteY="148dp" />
+        app:layout_constraintBottom_toTopOf="@+id/listaauto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/show_email" />
 
     <TextView
         android:id="@+id/email_account"
         android:layout_width="72dp"
-        android:layout_height="41dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="29dp"
         android:text="Email:"
         android:textColor="@android:color/black"
         android:textSize="24sp"
-        tools:layout_editor_absoluteX="169dp"
-        tools:layout_editor_absoluteY="30dp" />
+        app:layout_constraintBottom_toTopOf="@+id/show_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView3"
-        android:layout_width="390dp"
-        android:layout_height="41dp"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="16dp"
-        tools:layout_editor_absoluteY="70dp" />
+        android:id="@+id/show_email"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="28dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginStart="9dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toTopOf="@+id/intro_account"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/email_account" />
+
+    <Button
+        android:id="@+id/configurazioniauto"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="172dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:text="configurazioni auto"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listaconfigurazioni" />
+
+    <Button
+        android:id="@+id/listaauto"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="27dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:text="lista auto"
+        app:layout_constraintBottom_toTopOf="@+id/listaconfigurazioni"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intro_account" />
+
+    <Button
+        android:id="@+id/listaconfigurazioni"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="35dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginStart="16dp"
+        android:text="lista configurazioni"
+        app:layout_constraintBottom_toTopOf="@+id/configurazioniauto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/listaauto" />
+
 </android.support.constraint.ConstraintLayout>

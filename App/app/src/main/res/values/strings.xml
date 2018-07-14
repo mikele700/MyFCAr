@@ -5,6 +5,8 @@
 
     <string name="login_text">Effettua il login se sei già registrato, oppure registrati</string>
 
-    <string name="intro_account">Benvenuto, scegli un servizio tra quelli sottostanti</string>
+    <string name="intro_account">Scegli un servizio tra quelli sottostanti</string>
+
+    <string name="intro_conf_auto">Ecco una lista delle tue configurazioni che sono associate alle tue auto</string>
 
 </resources>

@@ -1,7 +1,7 @@
 package com.example.unina.myfcar.iclient;
 
-import com.example.unina.myfcar.account.Account;
-import com.example.unina.myfcar.iserver.IServerGestoreAccount;
+import business.domain.Account;
+import business.server.iserver.IServerGestoreAccount;
 
 /**
  * Created by Davide on 13/07/2018.

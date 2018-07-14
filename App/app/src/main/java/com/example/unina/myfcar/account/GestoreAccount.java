@@ -1,7 +1,12 @@
 package com.example.unina.myfcar.account;
 
 import com.example.unina.myfcar.iclient.IGestoreAccount;
-import com.example.unina.myfcar.iserver.IServerGestoreAccount;
+
+import business.domain.Account;
+import business.server.iserver.IServerGestoreAccount;
+import exception.AccountInesistente;
+import exception.ServerError;
+
 
 /**
  * Created by Davide on 13/07/2018.
@@ -11,6 +16,7 @@ public class GestoreAccount implements IGestoreAccount{
 
     private static GestoreAccount instance = null;
     private Account account;
+
 
     private GestoreAccount(){
     }
@@ -29,7 +35,13 @@ public class GestoreAccount implements IGestoreAccount{
 
     @Override
     public void login(String email, String password, IServerGestoreAccount sga) {
-        sga.login(email,password);
+        try {
+            sga.login(email,password);
+        } catch (AccountInesistente accountInesistente) {
+            accountInesistente.printStackTrace();
+        } catch (ServerError serverError) {
+            serverError.printStackTrace();
+        }
     }
 
     @Override

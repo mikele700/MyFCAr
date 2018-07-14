@@ -22,7 +22,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".activity.LoginActivity" />
-        <activity android:name=".activity.AccountActivity"></activity>
+        <activity android:name=".activity.AccountActivity" />
+        <activity android:name=".activity.ConfigurazioniAutoActivity" />
+        <activity android:name=".activity.AssociaAutoActivity"></activity>
     </application>
 
 </manifest>
