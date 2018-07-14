@@ -7,23 +7,20 @@ import business.domain.ConfigurazioneAuto;
 import business.server.iserver.IServerGestoreConfigurazioneAuto;
 import data.ConfigurazioneAutoDAO;
 import exception.ConfigurazioneAutoInesistente;
+import exception.ServerError;
 
 public class ServerGestoreConfigurazioneAuto implements IServerGestoreConfigurazioneAuto {
 	
-	public ConfigurazioneAuto associaAuto(Account account, Auto auto, Configurazione config){
+	public ConfigurazioneAuto associaAuto(Account account, Auto auto, Configurazione config) throws ServerError, ConfigurazioneAutoInesistente{
 		ConfigurazioneAuto confauto = new ConfigurazioneAuto(config);
 		if(ConfigurazioneAutoDAO.cerca(auto.getId())){
 			confauto.setId(auto.getId());
-			try {
-				ConfigurazioneAutoDAO.update(confauto, account);
-			} catch (ConfigurazioneAutoInesistente e) {
-				// TODO Auto-generated catch block
-				System.err.println(e.getMessage());
-				e.printStackTrace();
-			}
+			ConfigurazioneAutoDAO.update(confauto, account);
 		}
-		else
+		else{
 			ConfigurazioneAutoDAO.createConfigurazioneAuto(confauto, auto, account);
+			confauto.setId(auto.getId());
+		}
 		return confauto;
 	}
 	

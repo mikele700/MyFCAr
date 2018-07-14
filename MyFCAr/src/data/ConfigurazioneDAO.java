@@ -10,12 +10,13 @@ import java.util.Map;
 
 import business.domain.Account;
 import business.domain.Configurazione;
+import exception.ServerError;
 
 public class ConfigurazioneDAO {
 	
 	protected static Map<Integer, Configurazione> restoredObjects= new java.util.HashMap<Integer, Configurazione>();
 
-	public static List<Configurazione> readList(Account ac){
+	public static List<Configurazione> readList(Account ac) throws ServerError{
 		List<Configurazione> lista = new ArrayList<Configurazione>();
 		Connection c = DBManager.getConnection();
 		try(PreparedStatement pstat = c.prepareStatement("SELECT ID FROM CONFIGURAZIONI WHERE AccountID=?")){
@@ -30,6 +31,7 @@ public class ConfigurazioneDAO {
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
+			throw new ServerError("Errore di accesso ai dati.");
 		}
 
 		return lista;

@@ -10,12 +10,13 @@ import java.util.Map;
 
 import business.domain.Account;
 import business.domain.Auto;
+import exception.ServerError;
 
 public class AutoDAO {
 	
 	protected static Map<Integer, Auto> restoredObjects= new java.util.HashMap<Integer, Auto>();
 
-	public static List<Auto> readList(Account ac){
+	public static List<Auto> readList(Account ac) throws ServerError{
 		List<Auto> lista = new ArrayList<Auto>();
 		Connection c = DBManager.getConnection();
 		try(PreparedStatement pstat = c.prepareStatement("SELECT ID, VIN, Targa, Modello FROM AUTO, ACCOUNTAUTO WHERE AccountID=? AND AutoID=ID")){
@@ -30,6 +31,7 @@ public class AutoDAO {
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
+			throw new ServerError("Errore di accesso ai dati.");
 		}
 
 		return lista;

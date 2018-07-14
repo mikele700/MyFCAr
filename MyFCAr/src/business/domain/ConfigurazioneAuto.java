@@ -31,5 +31,9 @@ public class ConfigurazioneAuto implements Serializable{
 	public Configurazione getConfigurazione() {
 		return configurazione;
 	}
+	
+	public void stampaConfigurazioneAuto(){
+		System.out.println("ID Auto: "+id+"\tID Configurazione: "+this.getConfigurazione().getId());
+	}
 
 }

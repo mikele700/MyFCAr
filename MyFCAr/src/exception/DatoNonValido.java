@@ -1,18 +1,16 @@
 package exception;
 
-public class DatoInputErrato extends Exception {
-
-	/**
-	 * 
-	 */
+public class DatoNonValido extends Exception {
+	
 	private static final long serialVersionUID = 1L;
-	public DatoInputErrato() {
+	public DatoNonValido() {
 	}
-	public DatoInputErrato(String specifica){
+	public DatoNonValido(String specifica){
 		this.message=this.message+": "+specifica;
 	}
 	public String getMessage(){
 		return message;
 	}
 	private String message="Dato errato";
+
 }

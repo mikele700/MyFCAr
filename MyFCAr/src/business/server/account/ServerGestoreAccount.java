@@ -4,11 +4,12 @@ import business.domain.Account;
 import business.server.iserver.IServerGestoreAccount;
 import data.AccountDAO;
 import exception.AccountInesistente;
+import exception.ServerError;
 
 public class ServerGestoreAccount implements IServerGestoreAccount {
 
 	@Override
-	public Account login(String email, String password) throws AccountInesistente {
+	public Account login(String email, String password) throws AccountInesistente, ServerError {
 		// TODO Auto-generated method stub
 		Account account = null;
 		account = AccountDAO.read(email, password);

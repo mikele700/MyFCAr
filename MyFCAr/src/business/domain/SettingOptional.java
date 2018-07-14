@@ -2,6 +2,10 @@ package business.domain;
 
 public class SettingOptional extends Setting {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private NomeOptional nome;
 
 	public SettingOptional(Integer id, Float v, NomeOptional n) {

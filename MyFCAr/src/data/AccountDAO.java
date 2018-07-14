@@ -8,11 +8,12 @@ import java.util.Map;
 
 import business.domain.Account;
 import exception.AccountInesistente;
+import exception.ServerError;
 
 public class AccountDAO {
 	protected static Map<Integer, Account> restoredObjects= new java.util.HashMap<Integer, Account>();
 	
-	public static Account read(String e, String pw) throws AccountInesistente{
+	public static Account read(String e, String pw) throws AccountInesistente, ServerError{
 		Account ac = null;
 		Connection c = DBManager.getConnection();
 		try(PreparedStatement pstat = c.prepareStatement("SELECT ID FROM ACCOUNT WHERE Email=? AND Password=?")){
@@ -60,6 +61,7 @@ public class AccountDAO {
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
+			throw new ServerError("Errore di accesso ai dati.");
 		}
 
 		return ac;

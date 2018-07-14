@@ -10,12 +10,13 @@ import business.domain.Auto;
 import business.domain.Configurazione;
 import business.domain.ConfigurazioneAuto;
 import exception.ConfigurazioneAutoInesistente;
+import exception.ServerError;
 
 public class ConfigurazioneAutoDAO {
 	
 	protected static Map<Integer, ConfigurazioneAuto> restoredObjects= new java.util.HashMap<Integer, ConfigurazioneAuto>();
 
-	public static void createConfigurazioneAuto(ConfigurazioneAuto confauto, Auto auto, Account account){
+	public static void createConfigurazioneAuto(ConfigurazioneAuto confauto, Auto auto, Account account) throws ServerError{
 		
 		Connection c = DBManager.getConnection();
 		try(PreparedStatement pstat = c.prepareStatement("INSERT INTO CONFIGURAZIONIAUTO(AutoID, ConfigurazioneID, AccountID) VALUES (?,?,?)")){
@@ -29,10 +30,11 @@ public class ConfigurazioneAutoDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			throw new ServerError("Errore di accesso ai dati.");
 		}		
 	}
 	
-	public static boolean cerca(Integer id){
+	public static boolean cerca(Integer id) throws ServerError{
 		if(id==null)
 			return false;
 		if (restoredObjects.containsKey(id))
@@ -46,11 +48,12 @@ public class ConfigurazioneAutoDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			throw new ServerError("Errore di accesso ai dati.");
 		}
 		return false;
 	}
 	
-	public static void update(ConfigurazioneAuto confauto, Account account) throws ConfigurazioneAutoInesistente{
+	public static void update(ConfigurazioneAuto confauto, Account account) throws ConfigurazioneAutoInesistente, ServerError{
 		if(confauto.getId() == null)
 			throw new ConfigurazioneAutoInesistente();
 		Connection c=DBManager.getConnection();
@@ -65,11 +68,12 @@ public class ConfigurazioneAutoDAO {
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+			throw new ServerError("Errore di accesso ai dati.");
 		}
 
 	}
 	
-	public static List<ConfigurazioneAuto> readList(Account ac){
+	public static List<ConfigurazioneAuto> readList(Account ac) throws ServerError{
 		List<ConfigurazioneAuto> lista = new ArrayList<ConfigurazioneAuto>();
 		Connection c = DBManager.getConnection();
 		try(PreparedStatement pstat = c.prepareStatement("SELECT AutoID, ConfigurazioneID FROM CONFIGURAZIONIAUTO WHERE AccountID=?")){
@@ -86,6 +90,7 @@ public class ConfigurazioneAutoDAO {
 		} catch (SQLException e1) {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
+			throw new ServerError("Errore di accesso ai dati.");
 		}
 
 		return lista;

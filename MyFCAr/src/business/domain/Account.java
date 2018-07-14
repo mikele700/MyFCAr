@@ -56,17 +56,17 @@ public class Account implements Serializable{
 	}
 	
 	public List<Configurazione> getAllConfigurazione(){
-		return new ArrayList<Configurazione>(ListaConfigurazioni);
+		return ListaConfigurazioni;
 		
 	}
 	
 	public List<Auto> getAllAuto(){
-		return new ArrayList<Auto>(ParcoAuto);
+		return ParcoAuto;
 		
 	}
 	
 	public List<ConfigurazioneAuto> getAllConfigurazioneAuto(){
-		return new ArrayList<ConfigurazioneAuto>(ListaConfigurazioniAuto);
+		return ListaConfigurazioniAuto;
 		
 	}
 	
@@ -88,13 +88,17 @@ public class Account implements Serializable{
 		return null;
 	}
 	
-	public boolean cercaConfigurazioneAuto(Integer id){
+	public ConfigurazioneAuto getConfigurazioneAuto(Auto a){
 		for (Iterator<ConfigurazioneAuto> iterator = ListaConfigurazioniAuto.iterator(); iterator.hasNext();) {
 			ConfigurazioneAuto c = iterator.next();
-			if(c.getId()==id)
-				return true;
+			if(c.getId() == a.getId())
+				return c;
 		}
-		return false;
+		return null;
+	}
+	
+	public void rimuoviConfigurazioneAuto(ConfigurazioneAuto ca){
+		ListaConfigurazioniAuto.remove(ca);
 	}
 
 	public void setParcoAuto(List<Auto> parcoAuto) {
@@ -111,16 +115,20 @@ public class Account implements Serializable{
 	
 	public void stampaAccount(){
 		System.out.println("ID: "+id+"\tEmail: "+email+"\tPassword: "+password);
-		System.out.println("PARCO AUTO");
+		System.out.println("\nPARCO AUTO");
 		for (Iterator<Auto> iterator = ParcoAuto.iterator(); iterator.hasNext();) {
 			Auto a = iterator.next();
 			a.stampaAuto();
-			if(this.cercaConfigurazioneAuto(a.getId()))
-				System.out.println("Configurazione associata: "+a.getConfigurazioneAuto().getConfigurazione().getId());
 		}
+		System.out.println("\nCONFIGURAZIONI");
 		for (Iterator<Configurazione> iterator = ListaConfigurazioni.iterator(); iterator.hasNext();) {
 			Configurazione c = iterator.next();
 			c.stampaConfigurazione();
+		}
+		System.out.println("\nASSOCIAZIONI");
+		for (Iterator<ConfigurazioneAuto> iterator = ListaConfigurazioniAuto.iterator(); iterator.hasNext();) {
+			ConfigurazioneAuto ca = iterator.next();
+			ca.stampaConfigurazioneAuto();
 		}
 	}
 	

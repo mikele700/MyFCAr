@@ -2,6 +2,10 @@ package business.domain;
 
 public class SettingSerie extends Setting {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private NomeSerie nome;
 
 	public SettingSerie(Integer id, Float v, NomeSerie n) {
