@@ -1,9 +1,13 @@
-package business.server.configurazioneauto;
+package business.domain;
 
-import business.server.configurazione.Configurazione;
+import java.io.Serializable;
 
-public class ConfigurazioneAuto {
+public class ConfigurazioneAuto implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private Configurazione configurazione;
 	

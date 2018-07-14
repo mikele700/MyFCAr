@@ -8,6 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import business.domain.NomeOptional;
+import business.domain.NomeSerie;
+import business.domain.Setting;
+import business.domain.SettingOptional;
+import business.domain.SettingSerie;
 import business.server.configurazione.*;
 import exception.DatoInputErrato;
 

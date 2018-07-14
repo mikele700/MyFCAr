@@ -1,12 +1,14 @@
-package business.server.auto;
+package business.domain;
 
+import java.io.Serializable;
 import java.util.Iterator;
 import java.util.List;
 
-import business.server.configurazione.SettingOptional;
-import business.server.configurazioneauto.ConfigurazioneAuto;
-
-public class Auto {
+public class Auto implements Serializable{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private String VIN;
 	private String targa;
@@ -57,8 +59,13 @@ public class Auto {
 	public void stampaOptional(){
 		for (Iterator<SettingOptional> iterator = optional.iterator(); iterator.hasNext();) {
 			SettingOptional s = iterator.next();
-			System.out.println("Setting ID "+s.getId()+" Nome "+s.getNome());
+			System.out.println("ID Setting "+s.getId()+"\tNome "+s.getNome());
 		}
+	}
+	
+	public void stampaAuto(){
+		System.out.println("ID Auto: "+id+"\tVIN: "+VIN+"\tTarga: "+targa+"\tModello: "+modello);
+		this.stampaOptional();
 	}
 	
 }

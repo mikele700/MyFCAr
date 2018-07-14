@@ -1,9 +1,9 @@
 package business.server.iserver;
 
-import business.server.account.Account;
-import business.server.auto.Auto;
-import business.server.configurazione.Configurazione;
-import business.server.configurazioneauto.ConfigurazioneAuto;
+import business.domain.Account;
+import business.domain.Auto;
+import business.domain.Configurazione;
+import business.domain.ConfigurazioneAuto;
 
 public interface IServerGestoreConfigurazioneAuto {
 	public ConfigurazioneAuto associaAuto(Account account, Auto auto, Configurazione config);

@@ -1,13 +1,11 @@
 package business.server.configurazioneauto;
 
-import java.sql.SQLException;
-
-import business.server.account.Account;
-import business.server.auto.Auto;
-import business.server.configurazione.Configurazione;
+import business.domain.Account;
+import business.domain.Auto;
+import business.domain.Configurazione;
+import business.domain.ConfigurazioneAuto;
 import business.server.iserver.IServerGestoreConfigurazioneAuto;
 import data.ConfigurazioneAutoDAO;
-import data.DBManager;
 import exception.ConfigurazioneAutoInesistente;
 
 public class ServerGestoreConfigurazioneAuto implements IServerGestoreConfigurazioneAuto {

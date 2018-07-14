@@ -1,4 +1,4 @@
-package business.server.configurazione;
+package business.domain;
 
 import exception.DatoInputErrato;
 

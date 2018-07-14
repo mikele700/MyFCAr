@@ -1,15 +1,16 @@
-package business.server.account;
+package business.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-import business.server.auto.Auto;
-import business.server.configurazione.Configurazione;
-import business.server.configurazioneauto.ConfigurazioneAuto;
-
-public class Account {
+public class Account implements Serializable{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -6420897393005764896L;
 	private Integer id;
 	private String email;
 	private String password;
@@ -86,6 +87,15 @@ public class Account {
 		}
 		return null;
 	}
+	
+	public boolean cercaConfigurazioneAuto(Integer id){
+		for (Iterator<ConfigurazioneAuto> iterator = ListaConfigurazioniAuto.iterator(); iterator.hasNext();) {
+			ConfigurazioneAuto c = iterator.next();
+			if(c.getId()==id)
+				return true;
+		}
+		return false;
+	}
 
 	public void setParcoAuto(List<Auto> parcoAuto) {
 		ParcoAuto = parcoAuto;
@@ -99,6 +109,20 @@ public class Account {
 		ListaConfigurazioniAuto = listaConfigurazioniAuto;
 	}
 	
+	public void stampaAccount(){
+		System.out.println("ID: "+id+"\tEmail: "+email+"\tPassword: "+password);
+		System.out.println("PARCO AUTO");
+		for (Iterator<Auto> iterator = ParcoAuto.iterator(); iterator.hasNext();) {
+			Auto a = iterator.next();
+			a.stampaAuto();
+			if(this.cercaConfigurazioneAuto(a.getId()))
+				System.out.println("Configurazione associata: "+a.getConfigurazioneAuto().getConfigurazione().getId());
+		}
+		for (Iterator<Configurazione> iterator = ListaConfigurazioni.iterator(); iterator.hasNext();) {
+			Configurazione c = iterator.next();
+			c.stampaConfigurazione();
+		}
+	}
 	
 
 }

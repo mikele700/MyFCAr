@@ -1,21 +1,18 @@
 package business.server.account;
 
+import business.domain.Account;
 import business.server.iserver.IServerGestoreAccount;
-
-import java.util.Iterator;
-
-import business.server.auto.Auto;
-import business.server.configurazione.*;
-import business.server.configurazioneauto.ConfigurazioneAuto;
 import data.AccountDAO;
 import exception.AccountInesistente;
 
 public class ServerGestoreAccount implements IServerGestoreAccount {
 
 	@Override
-	public void login(String email, String password) {
+	public Account login(String email, String password) throws AccountInesistente {
 		// TODO Auto-generated method stub
-		
+		Account account = null;
+		account = AccountDAO.read(email, password);
+		return account;
 	}
 
 	@Override

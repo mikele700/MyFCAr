@@ -1,4 +1,4 @@
-package business.server.configurazione;
+package business.domain;
 
 public class SettingOptional extends Setting {
 	

@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import business.server.account.Account;
-import business.server.auto.Auto;
-import business.server.configurazione.Configurazione;
-import business.server.configurazioneauto.ConfigurazioneAuto;
+import business.domain.Account;
+import business.domain.Auto;
+import business.domain.Configurazione;
+import business.domain.ConfigurazioneAuto;
 import exception.ConfigurazioneAutoInesistente;
 
 public class ConfigurazioneAutoDAO {

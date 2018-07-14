@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Map;
 
-import business.server.account.Account;
+import business.domain.Account;
 import exception.AccountInesistente;
 
 public class AccountDAO {

@@ -1,7 +1,13 @@
-package business.server.configurazione;
+package business.domain;
 
-public abstract class Setting {
+import java.io.Serializable;
 
+public abstract class Setting implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private Integer id;
 	private Float Valore;
 	
