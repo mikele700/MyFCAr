@@ -2,7 +2,11 @@ package com.example.unina.myfcar.account;
 
 import com.example.unina.myfcar.iclient.IGestoreAccount;
 
+import java.util.List;
+
 import business.domain.Account;
+import business.domain.Auto;
+import business.domain.Configurazione;
 import business.server.iserver.IServerGestoreAccount;
 import exception.AccountInesistente;
 import exception.ServerError;
@@ -15,7 +19,7 @@ import exception.ServerError;
 public class GestoreAccount implements IGestoreAccount{
 
     private static GestoreAccount instance = null;
-    private Account account;
+    private Account logged;
 
 
     private GestoreAccount(){
@@ -29,19 +33,21 @@ public class GestoreAccount implements IGestoreAccount{
         return instance;
     }
 
-    public void setAccount(Account account){
-        this.account = account;
-    }
 
     @Override
-    public void login(String email, String password, IServerGestoreAccount sga) {
+    public String login(String email, String password, IServerGestoreAccount iserver) {
+        // TODO Auto-generated method stub
         try {
-            sga.login(email,password);
-        } catch (AccountInesistente accountInesistente) {
-            accountInesistente.printStackTrace();
-        } catch (ServerError serverError) {
-            serverError.printStackTrace();
+            logged = iserver.login(email, password);
+            if(logged != null){
+                String s = new String("ok");
+                return s;
+            }
+        } catch (AccountInesistente | ServerError e) {
+            // TODO Auto-generated catch block
+            return e.getMessage();
         }
+        return new String("no");
     }
 
     @Override
@@ -50,17 +56,30 @@ public class GestoreAccount implements IGestoreAccount{
     }
 
     @Override
-    public void registra(String email, String password, IServerGestoreAccount sga) {
-        sga.registra(email,password);
+    public void registra(String email, String password, IServerGestoreAccount iserver) {
+        iserver.registra(email,password);
     }
 
     @Override
-    public boolean verificaEmail(String email, IServerGestoreAccount sga) {
-        return sga.verificaEmail(email);
+    public boolean verificaEmail(String email, IServerGestoreAccount iserver) {
+        return iserver.verificaEmail(email);
     }
 
     @Override
     public Account getAccount() {
-        return null;
+        // TODO Auto-generated method stub
+        return logged;
+    }
+
+    @Override
+    public List<Configurazione> getConfigurazioneAccount() {
+        // TODO Auto-generated method stub
+        return logged.getAllConfigurazione();
+    }
+
+    @Override
+    public List<Auto> getAutoAccount() {
+        // TODO Auto-generated method stub
+        return logged.getAllAuto();
     }
 }
