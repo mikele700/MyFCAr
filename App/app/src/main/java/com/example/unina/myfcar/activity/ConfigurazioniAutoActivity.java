@@ -1,8 +1,11 @@
 package com.example.unina.myfcar.activity;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
@@ -14,6 +17,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 import business.domain.Account;
+import business.domain.Auto;
+import business.domain.ConfigurazioneAuto;
 
 
 public class ConfigurazioniAutoActivity extends AppCompatActivity {
@@ -28,12 +33,22 @@ public class ConfigurazioniAutoActivity extends AppCompatActivity {
         ArrayAdapter adapter;
 
         IGestoreAccount gestoreAccount = GestoreAccount.getInstance();
-        List listaConf = gestoreAccount.getConfigurazioneAuto();
+        List<ConfigurazioneAuto> listaConf = gestoreAccount.getConfigurazioneAutoAccount();
         for(int i=0;i<listaConf.size();i++) {
-            list.add(gestoreAccount.getConfigurazioneAuto().get(i).getId());
+            Auto auto = gestoreAccount.cercaAutoAccount(listaConf.get(i).getId());
+            list.add("Targa: "+auto.getTarga()+"    Modello: "+auto.getModello()+"    Configurazione: "+listaConf.get(i).getConfigurazione().getId());
         }
         adapter = new ArrayAdapter(ConfigurazioniAutoActivity.this, android.R.layout.simple_list_item_1,list);
-        
+        listview.setAdapter(adapter);
+
+        Button button = (Button) findViewById(R.id.associa_auto);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),AssociaAutoActivity.class);
+                startActivity(i);
+            }
+        });
 
     }
 }

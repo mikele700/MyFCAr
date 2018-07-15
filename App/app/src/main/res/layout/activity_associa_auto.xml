@@ -9,81 +9,83 @@
 
     <TextView
         android:id="@+id/intro_associa_auto"
-        android:layout_width="397dp"
-        android:layout_height="73dp"
-        android:layout_marginBottom="9dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="18dp"
+        android:layout_width="385dp"
+        android:layout_height="63dp"
+        android:layout_marginBottom="19dp"
+        android:layout_marginEnd="13dp"
+        android:layout_marginStart="13dp"
+        android:layout_marginTop="14dp"
         android:text="@string/intro_associa_auto"
         android:textColor="@android:color/black"
         android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/parco_auto"
+        app:layout_constraintBottom_toTopOf="@+id/title_parco_auto"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:id="@+id/listView2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="19dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="27dp"
+        android:id="@+id/lista_auto"
+        android:layout_width="382dp"
+        android:layout_height="183dp"
+        android:layout_marginBottom="21dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="14dp"
         android:cacheColorHint="?android:attr/colorBackgroundCacheHint"
         android:divider="?android:attr/listDivider"
         android:scrollbars="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/lista_configurazioni"
+        app:layout_constraintBottom_toTopOf="@+id/title_lista_conf"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/parco_auto" />
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ListView
-        android:id="@+id/listView3"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginStart="8dp"
+        android:id="@+id/lista_conf"
+        android:layout_width="382dp"
+        android:layout_height="183dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginStart="14dp"
         android:cacheColorHint="?android:attr/colorBackgroundCacheHint"
         android:divider="?android:attr/listDivider"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toTopOf="@+id/conferma"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/lista_configurazioni" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/parco_auto"
+        android:id="@+id/title_parco_auto"
         android:layout_width="118dp"
         android:layout_height="28dp"
-        android:layout_marginBottom="199dp"
+        android:layout_marginEnd="277dp"
+        android:layout_marginStart="16dp"
         android:text="Parco auto:"
         android:textColor="@android:color/black"
-        app:layout_constraintBottom_toTopOf="@+id/lista_configurazioni"
-        app:layout_constraintStart_toStartOf="@+id/listView2"
-        app:layout_constraintTop_toBottomOf="@+id/intro_associa_auto" />
+        app:layout_constraintBottom_toTopOf="@+id/lista_auto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <TextView
-        android:id="@+id/lista_configurazioni"
+        android:id="@+id/title_lista_conf"
         android:layout_width="164dp"
         android:layout_height="28dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginEnd="231dp"
+        android:layout_marginStart="16dp"
         android:text="Lista configurazioni:"
         android:textColor="@android:color/black"
-        app:layout_constraintBottom_toTopOf="@+id/listView3"
-        app:layout_constraintStart_toStartOf="@+id/listView3"
-        app:layout_constraintTop_toBottomOf="@+id/parco_auto" />
+        app:layout_constraintBottom_toTopOf="@+id/lista_conf"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <Button
         android:id="@+id/conferma"
         android:layout_width="124dp"
         android:layout_height="44dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="143dp"
+        android:layout_marginStart="144dp"
         android:text="conferma"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/listView3" />
+        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>

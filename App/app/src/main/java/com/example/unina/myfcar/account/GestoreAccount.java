@@ -38,17 +38,17 @@ public class GestoreAccount implements IGestoreAccount{
     @Override
     public String login(String email, String password, IServerGestoreAccount iserver) {
         // TODO Auto-generated method stub
+        String s=null;
         try {
             logged = iserver.login(email, password);
             if(logged != null){
-                String s = new String("ok");
-                return s;
+                s = new String("ok");
             }
         } catch (AccountInesistente | ServerError e) {
             // TODO Auto-generated catch block
-            return e.getMessage();
+            s = e.getMessage();
         }
-        return new String("no");
+        return s;
     }
 
     @Override
@@ -85,9 +85,12 @@ public class GestoreAccount implements IGestoreAccount{
     }
 
     @Override
-    public List<ConfigurazioneAuto> getConfigurazioneAuto() {
+    public List<ConfigurazioneAuto> getConfigurazioneAutoAccount() {
         return logged.getAllConfigurazioneAuto();
     }
 
-
+    @Override
+    public Auto cercaAutoAccount(Integer idAuto){
+        return logged.getAuto(idAuto);
+    }
 }
