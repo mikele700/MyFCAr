@@ -22,7 +22,7 @@ public class ClientAccount {
 			iservera = (IServerGestoreAccount) clienta.getGlobal(IServerGestoreAccount.class);
 			IGestoreAccount gestorea = GestoreAccount.getInstance();
 			System.out.println("-----------LOGIN----------------\n");
-			gestorea.login("mi.pommella@studenti.unina.i", "dmd", iservera);
+			gestorea.login("mi.pommella@studenti.unina.it", "dmd", iservera);
 			System.out.println("\n---------------------------------");
 			System.out.println("-----------ASSOCIA AUTO-----------\n");
 			

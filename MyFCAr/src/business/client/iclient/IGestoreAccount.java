@@ -14,5 +14,7 @@ public interface IGestoreAccount {
 	public Account getAccount();
 	public List<Configurazione> getConfigurazioneAccount();
 	public List<Auto> getAutoAccount();
+	public List<ConfigurazioneAuto> getConfigurazioneAutoAccount();
+	public Auto cercaAutoAccount(Integer idAuto);
 
 }

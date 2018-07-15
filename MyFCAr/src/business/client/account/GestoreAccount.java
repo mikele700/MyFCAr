@@ -6,6 +6,7 @@ import business.client.iclient.IGestoreAccount;
 import business.domain.Account;
 import business.domain.Auto;
 import business.domain.Configurazione;
+import business.domain.ConfigurazioneAuto;
 import business.server.iserver.IServerGestoreAccount;
 import exception.AccountInesistente;
 import exception.ServerError;
@@ -70,6 +71,14 @@ public class GestoreAccount implements IGestoreAccount {
 	public List<Auto> getAutoAccount() {
 		// TODO Auto-generated method stub
 		return logged.getAllAuto();
+	}
+	
+	public List<ConfigurazioneAuto> getConfigurazioneAutoAccount(){
+		return logged.getAllConfigurazioneAuto();
+	}
+	
+	public Auto cercaAutoAccount(Integer idAuto){
+		return logged.getAuto(idAuto);
 	}
 
 }
