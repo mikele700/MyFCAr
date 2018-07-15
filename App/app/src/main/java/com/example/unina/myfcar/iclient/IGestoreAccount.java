@@ -5,6 +5,7 @@ import java.util.List;
 import business.domain.Account;
 import business.domain.Auto;
 import business.domain.Configurazione;
+import business.domain.ConfigurazioneAuto;
 import business.server.iserver.IServerGestoreAccount;
 
 /**
@@ -20,4 +21,5 @@ public interface IGestoreAccount {
     public Account getAccount();
     public List<Configurazione> getConfigurazioneAccount();
     public List<Auto> getAutoAccount();
+    public List<ConfigurazioneAuto> getConfigurazioneAuto();
 }

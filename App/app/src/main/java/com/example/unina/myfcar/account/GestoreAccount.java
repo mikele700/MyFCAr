@@ -7,6 +7,7 @@ import java.util.List;
 import business.domain.Account;
 import business.domain.Auto;
 import business.domain.Configurazione;
+import business.domain.ConfigurazioneAuto;
 import business.server.iserver.IServerGestoreAccount;
 import exception.AccountInesistente;
 import exception.ServerError;
@@ -82,4 +83,11 @@ public class GestoreAccount implements IGestoreAccount{
         // TODO Auto-generated method stub
         return logged.getAllAuto();
     }
+
+    @Override
+    public List<ConfigurazioneAuto> getConfigurazioneAuto() {
+        return logged.getAllConfigurazioneAuto();
+    }
+
+
 }
