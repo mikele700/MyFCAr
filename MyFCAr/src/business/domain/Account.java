@@ -73,7 +73,7 @@ public class Account implements Serializable{
 	public Auto getAuto(Integer id){
 		for (Iterator<Auto> iterator = ParcoAuto.iterator(); iterator.hasNext();) {
 			Auto at = iterator.next();
-			if(at.getId()==id)
+			if(at.getId().equals(id))
 				return at;
 		}
 		return null;
@@ -82,7 +82,7 @@ public class Account implements Serializable{
 	public Configurazione getConfigurazione(Integer id){
 		for (Iterator<Configurazione> iterator = ListaConfigurazioni.iterator(); iterator.hasNext();) {
 			Configurazione c = iterator.next();
-			if(c.getId()==id)
+			if(c.getId().equals(id))
 				return c;
 		}
 		return null;
@@ -91,7 +91,7 @@ public class Account implements Serializable{
 	public ConfigurazioneAuto getConfigurazioneAuto(Auto a){
 		for (Iterator<ConfigurazioneAuto> iterator = ListaConfigurazioniAuto.iterator(); iterator.hasNext();) {
 			ConfigurazioneAuto c = iterator.next();
-			if(c.getId() == a.getId())
+			if(c.getId().equals(a.getId()))
 				return c;
 		}
 		return null;
