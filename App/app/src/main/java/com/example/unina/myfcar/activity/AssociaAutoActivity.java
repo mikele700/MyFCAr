@@ -81,7 +81,8 @@ public class AssociaAutoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Connessione conn = new Connessione();
-                conn.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+//                conn.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                conn.start();
             }
         });
 
@@ -98,10 +99,11 @@ public class AssociaAutoActivity extends AppCompatActivity {
 
 
 
-    class Connessione extends AsyncTask<Void, Void, AssociaAutoActivity> {
-
+//    class Connessione extends AsyncTask<Void, Void, AssociaAutoActivity> {
+    class Connessione extends Thread {
         @Override
-        protected AssociaAutoActivity doInBackground(Void... params) {
+//        protected AssociaAutoActivity doInBackground(Void... params)
+        public void run(){
             Looper.prepare();
             try {
                 CallHandler callHandler = new CallHandler();
@@ -120,7 +122,7 @@ public class AssociaAutoActivity extends AppCompatActivity {
                 e.printStackTrace();
             }
             Looper.loop();
-            return null;
+//            return null;
         }
 
     }

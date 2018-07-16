@@ -24,11 +24,14 @@
         app:layout_constraintTop_toBottomOf="@+id/show_email" />
 
     <TextView
-        android:id="@+id/email_account"
-        android:layout_width="72dp"
+        android:id="@+id/title_account"
+        android:layout_width="206dp"
         android:layout_height="0dp"
+        android:layout_marginEnd="103dp"
+        android:layout_marginStart="102dp"
         android:layout_marginTop="29dp"
-        android:text="Email:"
+        android:text="Benvenuto"
+        android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="24sp"
         app:layout_constraintBottom_toTopOf="@+id/show_email"
@@ -48,7 +51,7 @@
         app:layout_constraintBottom_toTopOf="@+id/intro_account"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/email_account" />
+        app:layout_constraintTop_toBottomOf="@+id/title_account" />
 
     <Button
         android:id="@+id/configurazioniauto"
@@ -89,6 +92,20 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/listaauto" />
 
+    <ImageButton
+        android:id="@+id/logout"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginBottom="51dp"
+        android:layout_marginEnd="174dp"
+        android:layout_marginStart="177dp"
+        android:layout_marginTop="62dp"
+        android:background="@android:color/background_light"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/configurazioniauto"
+        app:srcCompat="@drawable/logout" />
 
 
 </android.support.constraint.ConstraintLayout>

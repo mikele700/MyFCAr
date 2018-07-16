@@ -2,6 +2,7 @@ package com.example.unina.myfcar.account;
 
 import com.example.unina.myfcar.iclient.IGestoreAccount;
 
+import java.security.AccessControlException;
 import java.util.List;
 
 import business.domain.Account;
@@ -44,16 +45,18 @@ public class GestoreAccount implements IGestoreAccount{
             if(logged != null){
                 s = new String("ok");
             }
-        } catch (AccountInesistente | ServerError e) {
+        } catch (AccountInesistente | ServerError e ) {
             // TODO Auto-generated catch block
             s = e.getMessage();
+        } catch (RuntimeException e){
+            s = "Email e/o password errati!";
         }
         return s;
     }
 
     @Override
-    public void logout(Account account) {
-
+    public void logout() {
+        logged = null;
     }
 
     @Override

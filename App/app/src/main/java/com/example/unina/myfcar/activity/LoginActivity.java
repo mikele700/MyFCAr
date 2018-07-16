@@ -1,5 +1,6 @@
 package com.example.unina.myfcar.activity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Looper;
@@ -31,16 +32,19 @@ public class LoginActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
                 public void onClick(View view) {
-                    new Conn().execute();
-
+                    Conn conn = new Conn();
+//                    conn.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
+                    conn.start();
                 }
             });
     }
 
-    class Conn extends AsyncTask<Void, Void, MainActivity> {
+//    class Conn extends AsyncTask<Void, Void, MainActivity> {
+    class Conn extends Thread{
 
         @Override
-        protected MainActivity doInBackground(Void... params) {
+//        protected MainActivity doInBackground(Void... params) {
+        public void run(){
             Intent i = new Intent(getApplicationContext(),AccountActivity.class);
             EditText email = (EditText) findViewById(R.id.email_insert);
             EditText pass = (EditText) findViewById(R.id.password_insert);
@@ -61,8 +65,9 @@ public class LoginActivity extends AppCompatActivity {
                         i.putExtras(data);
                         startActivity(i);
                     }
-                    else
-                        Toast.makeText(LoginActivity.this,s,Toast.LENGTH_SHORT).show();
+                    else {
+                        Toast.makeText(LoginActivity.this, s, Toast.LENGTH_SHORT).show();
+                    }
                     client.close();
                 } catch (IOException e) {
                     e.printStackTrace();
@@ -70,9 +75,15 @@ public class LoginActivity extends AppCompatActivity {
 
 
             Looper.loop();
-            return null;
+//            return null;
         }
 
+    }
+
+    @Override
+    protected void onStop(){
+        super.onStop();
+        finish();
     }
 
 

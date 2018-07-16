@@ -9,12 +9,12 @@
 
     <TextView
         android:id="@+id/intro_lista_conf"
-        android:layout_width="372dp"
-        android:layout_height="68dp"
-        android:layout_marginBottom="1dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginStart="18dp"
-        android:layout_marginTop="15dp"
+        android:layout_width="370dp"
+        android:layout_height="69dp"
+        android:layout_marginBottom="14dp"
+        android:layout_marginEnd="18dp"
+        android:layout_marginStart="26dp"
+        android:layout_marginTop="26dp"
         android:text="@string/intro_lista_configurazioni"
         android:textColor="@android:color/black"
         android:textSize="24sp"
@@ -25,14 +25,15 @@
 
     <ListView
         android:id="@+id/lista_configurazioni"
-        android:layout_width="372dp"
-        android:layout_height="457dp"
-        android:layout_marginBottom="9dp"
-        android:layout_marginEnd="20dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="19dp"
+        android:layout_marginEnd="19dp"
         android:layout_marginStart="19dp"
         app:layout_constraintBottom_toTopOf="@+id/indietro2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intro_lista_conf" />
 
     <ImageButton
         android:id="@+id/indietro2"
@@ -40,11 +41,10 @@
         android:layout_height="48dp"
         android:layout_marginBottom="7dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginStart="347dp"
         android:backgroundTint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lista_configurazioni"
         app:srcCompat="@drawable/freccia" />
 
 </android.support.constraint.ConstraintLayout>

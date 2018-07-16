@@ -9,13 +9,14 @@
 
     <TextView
         android:id="@+id/intro_associa_auto"
-        android:layout_width="385dp"
-        android:layout_height="63dp"
-        android:layout_marginBottom="19dp"
-        android:layout_marginEnd="13dp"
-        android:layout_marginStart="13dp"
-        android:layout_marginTop="14dp"
+        android:layout_width="360dp"
+        android:layout_height="74dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="80dp"
         android:text="@string/intro_associa_auto"
+        android:textAlignment="center"
         android:textColor="@android:color/black"
         android:textSize="18sp"
         app:layout_constraintBottom_toTopOf="@+id/title_parco_auto"
@@ -23,80 +24,86 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <TextView
+        android:id="@+id/title_parco_auto"
+        android:layout_width="118dp"
+        android:layout_height="28dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginEnd="277dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="1dp"
+        android:text="Parco auto:"
+        android:textColor="@android:color/black"
+        app:layout_constraintBottom_toTopOf="@+id/lista_auto"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intro_associa_auto" />
+
     <ListView
         android:id="@+id/lista_auto"
-        android:layout_width="382dp"
-        android:layout_height="183dp"
-        android:layout_marginBottom="21dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginStart="14dp"
+        android:layout_width="383dp"
+        android:layout_height="178dp"
+        android:layout_marginBottom="7dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="2dp"
         android:cacheColorHint="?android:attr/colorBackgroundCacheHint"
         android:divider="?android:attr/listDivider"
         android:scrollbars="vertical"
         app:layout_constraintBottom_toTopOf="@+id/title_lista_conf"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_parco_auto" />
 
     <ListView
         android:id="@+id/lista_conf"
-        android:layout_width="382dp"
-        android:layout_height="183dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginStart="14dp"
+        android:layout_width="383dp"
+        android:layout_height="177dp"
+        android:layout_marginEnd="14dp"
+        android:layout_marginStart="20dp"
         android:cacheColorHint="?android:attr/colorBackgroundCacheHint"
         android:divider="?android:attr/listDivider"
         android:scrollbars="vertical"
-        app:layout_constraintBottom_toTopOf="@+id/conferma"
+        app:layout_constraintBottom_toTopOf="@+id/indietro"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/title_parco_auto"
-        android:layout_width="118dp"
-        android:layout_height="28dp"
-        android:layout_marginEnd="277dp"
-        android:layout_marginStart="16dp"
-        android:text="Parco auto:"
-        android:textColor="@android:color/black"
-        app:layout_constraintBottom_toTopOf="@+id/lista_auto"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_lista_conf" />
 
     <TextView
         android:id="@+id/title_lista_conf"
         android:layout_width="164dp"
         android:layout_height="28dp"
+        android:layout_marginBottom="4dp"
         android:layout_marginEnd="231dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="40dp"
         android:text="Lista configurazioni:"
         android:textColor="@android:color/black"
         app:layout_constraintBottom_toTopOf="@+id/lista_conf"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lista_auto" />
 
     <Button
         android:id="@+id/conferma"
-        android:layout_width="124dp"
-        android:layout_height="44dp"
-        android:layout_marginBottom="10dp"
-        android:layout_marginEnd="143dp"
-        android:layout_marginStart="144dp"
+        android:layout_width="129dp"
+        android:layout_height="39dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="24dp"
+        android:layout_marginStart="180dp"
+        android:layout_marginTop="13dp"
         android:text="conferma"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toStartOf="@+id/indietro"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lista_conf" />
 
     <ImageButton
         android:id="@+id/indietro"
         android:layout_width="48dp"
         android:layout_height="48dp"
-        android:layout_marginBottom="7dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="79dp"
-        android:layout_marginTop="9dp"
+        android:layout_marginBottom="80dp"
+        android:layout_marginEnd="80dp"
+        android:layout_marginStart="24dp"
         android:backgroundTint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

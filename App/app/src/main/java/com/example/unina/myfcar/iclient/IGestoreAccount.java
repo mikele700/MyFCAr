@@ -15,7 +15,7 @@ import business.server.iserver.IServerGestoreAccount;
 public interface IGestoreAccount {
 
     public String login(String email, String password, IServerGestoreAccount sga);
-    public void logout(Account account);
+    public void logout();
     public void registra(String email, String password, IServerGestoreAccount sga);
     public boolean verificaEmail(String email, IServerGestoreAccount sga);
     public Account getAccount();

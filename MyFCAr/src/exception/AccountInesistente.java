@@ -13,6 +13,6 @@ public class AccountInesistente extends Exception {
 	public String getMessage(){
 		return message;
 	}
-	private final String message = "Account inesistente.";
+	private final String message = "Email e/o password errati!";
 
 }

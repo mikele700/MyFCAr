@@ -4,33 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.unina.myfcar.activity.ListaAutoActivity">
+    tools:context="com.example.unina.myfcar.activity.ListaAutoActivity"
+    tools:layout_editor_absoluteY="81dp">
 
     <TextView
         android:id="@+id/intro_lista_auto"
-        android:layout_width="371dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="24dp"
+        android:layout_width="358dp"
+        android:layout_height="40dp"
+        android:layout_marginBottom="11dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
         android:layout_marginTop="16dp"
         android:text="@string/intro_lista_auto"
         android:textColor="@android:color/black"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/lista_configurazioni"
+        app:layout_constraintBottom_toTopOf="@+id/lista_automobili"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
         android:id="@+id/lista_automobili"
-        android:layout_width="372dp"
-        android:layout_height="481dp"
-        android:layout_marginBottom="6dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginStart="23dp"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="17dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginStart="19dp"
         app:layout_constraintBottom_toTopOf="@+id/indietro1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/intro_lista_auto" />
 
     <ImageButton
         android:id="@+id/indietro1"
@@ -38,13 +41,10 @@
         android:layout_height="48dp"
         android:layout_marginBottom="7dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginStart="79dp"
-        android:layout_marginTop="9dp"
         android:backgroundTint="@color/colorPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/conferma"
-        app:layout_constraintTop_toBottomOf="@+id/lista_conf"
+        app:layout_constraintTop_toBottomOf="@+id/lista_automobili"
         app:srcCompat="@drawable/freccia" />
 
 </android.support.constraint.ConstraintLayout>

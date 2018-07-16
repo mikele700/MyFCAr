@@ -40,7 +40,6 @@ public class GestoreConfigurazioneAuto implements IGestoreConfigurazioneAuto{
                 if(old!=null)
                     account.rimuoviConfigurazioneAuto(old);
                 account.aggiungiConfigurazioneAuto(ca);
-                ca.stampaConfigurazioneAuto();
             }
         } catch (ServerError | ConfigurazioneAutoInesistente e) {
             // TODO Auto-generated catch block
