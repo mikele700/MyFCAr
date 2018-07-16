@@ -27,12 +27,14 @@ public class GestoreConfigurazioneAuto implements IGestoreConfigurazioneAuto{
     }
 
     @Override
-    public void associaAuto(Account account, Auto auto, Configurazione configurazione,IServerGestoreConfigurazioneAuto server) {
+    public String associaAuto(Account account, Auto auto, Configurazione configurazione,IServerGestoreConfigurazioneAuto server) {
         // TODO Auto-generated method stub
         ConfigurazioneAuto ca;
+        String s = null;
         try {
             ca = server.associaAuto(account, auto, configurazione);
             if(ca!=null){
+                s = new String("Operazione riuscita!");
                 auto.setConfigurazioneAuto(ca);
                 ConfigurazioneAuto old = account.getConfigurazioneAuto(auto);
                 if(old!=null)
@@ -42,7 +44,8 @@ public class GestoreConfigurazioneAuto implements IGestoreConfigurazioneAuto{
             }
         } catch (ServerError | ConfigurazioneAutoInesistente e) {
             // TODO Auto-generated catch block
-            e.getMessage();
+            s = e.getMessage();
         }
+        return s;
     }
 }

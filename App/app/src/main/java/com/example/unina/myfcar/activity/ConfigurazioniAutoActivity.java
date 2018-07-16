@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
@@ -46,6 +47,15 @@ public class ConfigurazioniAutoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),AssociaAutoActivity.class);
+                startActivity(i);
+            }
+        });
+
+        ImageButton button2 = (ImageButton) findViewById(R.id.indietro3);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),AccountActivity.class);
                 startActivity(i);
             }
         });

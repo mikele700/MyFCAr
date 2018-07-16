@@ -11,5 +11,5 @@ import business.server.iserver.IServerGestoreConfigurazioneAuto;
 
 public interface IGestoreConfigurazioneAuto {
 
-    public void associaAuto(Account account, Auto auto, Configurazione configurazione, IServerGestoreConfigurazioneAuto server);
+    public String associaAuto(Account account, Auto auto, Configurazione configurazione, IServerGestoreConfigurazioneAuto server);
 }

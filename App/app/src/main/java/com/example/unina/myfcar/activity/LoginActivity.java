@@ -22,23 +22,19 @@ import lipermi.net.Client;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private boolean accesso=false;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
         Button button = (Button) findViewById(R.id.login);
-//        while(!accesso) {
-            button.setOnClickListener(new View.OnClickListener() {
-                @Override
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
                 public void onClick(View view) {
                     new Conn().execute();
 
                 }
             });
-//        }
     }
 
     class Conn extends AsyncTask<Void, Void, MainActivity> {
@@ -58,7 +54,6 @@ public class LoginActivity extends AppCompatActivity {
                 String s = gestorea.login(email.getText().toString(),pass.getText().toString(),iservera);
 
                     if(s.equals("ok")) {
-                        accesso = true;
                         Bundle data = new Bundle();
                         data.putString("email", email.getText().toString());
 //                        data.putString("pass", pass.getText().toString());
@@ -80,19 +75,7 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onResume(){
-        super.onResume();
 
-        Button button = (Button) findViewById(R.id.login);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                new Conn().execute();
-
-            }
-        });
-    }
 }
 
 

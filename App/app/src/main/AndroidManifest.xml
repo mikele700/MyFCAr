@@ -26,7 +26,9 @@
         <activity android:name=".activity.LoginActivity" />
         <activity android:name=".activity.AccountActivity" />
         <activity android:name=".activity.ConfigurazioniAutoActivity" />
-        <activity android:name=".activity.AssociaAutoActivity"></activity>
+        <activity android:name=".activity.AssociaAutoActivity" />
+        <activity android:name=".activity.ListaAutoActivity" />
+        <activity android:name=".activity.ListaConfigurazioniActivity"></activity>
     </application>
 
 </manifest>

@@ -11,4 +11,9 @@
 
     <string name="intro_associa_auto">Seleziona un elemento dalla lista auto e uno dalla lista configurazioni per associare una tua auto ad una tua configurazione</string>
 
+    <string name="intro_lista_auto">Ecco una lista delle tue auto:</string>
+
+    <string name="intro_lista_configurazioni">Ecco una lista delle tue configurazioni:</string>
+
+
 </resources>

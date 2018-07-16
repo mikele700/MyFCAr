@@ -32,5 +32,23 @@ public class AccountActivity extends AppCompatActivity {
             }
         });
 
+        Button button1 = (Button) findViewById(R.id.listaauto);
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),ListaAutoActivity.class);
+                startActivity(i);
+            }
+        });
+
+        Button button2 = (Button) findViewById(R.id.listaconfigurazioni);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),ListaConfigurazioniActivity.class);
+                startActivity(i);
+            }
+        });
+
     }
 }

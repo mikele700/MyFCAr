@@ -1,5 +1,6 @@
 package com.example.unina.myfcar.activity;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Looper;
 import android.support.v7.app.AppCompatActivity;
@@ -8,7 +9,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.example.unina.myfcar.R;
 import com.example.unina.myfcar.account.GestoreAccount;
@@ -29,7 +32,7 @@ import lipermi.net.Client;
 public class AssociaAutoActivity extends AppCompatActivity {
 
     private Auto auto_select;
-    private  Configurazione conf_select;
+    private Configurazione conf_select;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,17 +80,28 @@ public class AssociaAutoActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new Conn().execute();
+                Connessione conn = new Connessione();
+                conn.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR);
             }
         });
+
+        ImageButton button2 = (ImageButton) findViewById(R.id.indietro);
+        button2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getApplicationContext(),AccountActivity.class);
+                startActivity(i);
+            }
+        });
+
     }
 
 
 
-    class Conn extends AsyncTask<Void, Void, MainActivity> {
+    class Connessione extends AsyncTask<Void, Void, AssociaAutoActivity> {
 
         @Override
-        protected MainActivity doInBackground(Void... params) {
+        protected AssociaAutoActivity doInBackground(Void... params) {
             Looper.prepare();
             try {
                 CallHandler callHandler = new CallHandler();
@@ -98,7 +112,8 @@ public class AssociaAutoActivity extends AppCompatActivity {
                 IGestoreConfigurazioneAuto gestoreConfigurazioneAuto = GestoreConfigurazioneAuto.getInstance();
                 IGestoreAccount gestorea = GestoreAccount.getInstance();
 
-                gestoreConfigurazioneAuto.associaAuto(gestorea.getAccount(),auto_select,conf_select,iserverca);
+                String s = gestoreConfigurazioneAuto.associaAuto(gestorea.getAccount(),auto_select,conf_select,iserverca);
+                Toast.makeText(AssociaAutoActivity.this,s,Toast.LENGTH_SHORT).show();
 
                 clientca.close();
             } catch (IOException e) {
