@@ -107,7 +107,9 @@ public class AssociaAutoActivity extends AppCompatActivity {
             Looper.prepare();
             try {
                 CallHandler callHandler = new CallHandler();
-                Client clientca = new Client("192.168.1.62", 4455, callHandler);
+//                Client clientca = new Client("192.168.1.62", 4455, callHandler);  //ip casa Davide
+//                Client clientca = new Client("87.12.207.206", 4455, callHandler);  //ip pubblico Michele
+                Client clientca = new Client("192.168.43.19", 4455, callHandler);  //hotspot telefono Davide
                 IServerGestoreConfigurazioneAuto iserverca;
                 iserverca = (IServerGestoreConfigurazioneAuto) clientca.getGlobal(IServerGestoreConfigurazioneAuto.class);
 
