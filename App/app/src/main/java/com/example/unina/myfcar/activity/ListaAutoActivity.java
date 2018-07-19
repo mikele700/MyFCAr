@@ -24,11 +24,15 @@ public class ListaAutoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_auto);
 
+        final IGestoreAccount gestoreAccount = GestoreAccount.getInstance();
         ImageButton button = (ImageButton) findViewById(R.id.indietro1);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),AccountActivity.class);
+                Bundle data = new Bundle();
+                data.putString("email", gestoreAccount.getAccount().getEmail());
+                i.putExtras(data);
                 startActivity(i);
             }
         });
@@ -37,7 +41,6 @@ public class ListaAutoActivity extends AppCompatActivity {
         List list_auto = new ArrayList();
         ArrayAdapter adapter;
 
-        IGestoreAccount gestoreAccount = GestoreAccount.getInstance();
         final List<Auto> parco_auto = gestoreAccount.getAutoAccount();
         
         for (int i = 0; i < parco_auto.size(); i++) {

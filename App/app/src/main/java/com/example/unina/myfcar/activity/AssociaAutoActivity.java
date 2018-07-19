@@ -45,7 +45,7 @@ public class AssociaAutoActivity extends AppCompatActivity {
         List list_conf = new ArrayList();
         ArrayAdapter adapter;
 
-        IGestoreAccount gestoreAccount = GestoreAccount.getInstance();
+        final IGestoreAccount gestoreAccount = GestoreAccount.getInstance();
         final List<Auto> parco_auto = gestoreAccount.getAutoAccount();
         final List<Configurazione> lista_configurazioni = gestoreAccount.getConfigurazioneAccount();
 
@@ -91,6 +91,9 @@ public class AssociaAutoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),AccountActivity.class);
+                Bundle data = new Bundle();
+                data.putString("email", gestoreAccount.getAccount().getEmail());
+                i.putExtras(data);
                 startActivity(i);
             }
         });

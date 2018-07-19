@@ -33,7 +33,7 @@ public class ConfigurazioniAutoActivity extends AppCompatActivity {
         List list = new ArrayList();
         ArrayAdapter adapter;
 
-        IGestoreAccount gestoreAccount = GestoreAccount.getInstance();
+        final IGestoreAccount gestoreAccount = GestoreAccount.getInstance();
         List<ConfigurazioneAuto> listaConf = gestoreAccount.getConfigurazioneAutoAccount();
         for(int i=0;i<listaConf.size();i++) {
             Auto auto = gestoreAccount.cercaAutoAccount(listaConf.get(i).getId());
@@ -56,6 +56,9 @@ public class ConfigurazioniAutoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),AccountActivity.class);
+                Bundle data = new Bundle();
+                data.putString("email", gestoreAccount.getAccount().getEmail());
+                i.putExtras(data);
                 startActivity(i);
             }
         });

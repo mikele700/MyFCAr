@@ -52,7 +52,6 @@ public class LoginActivity extends AppCompatActivity {
             try {
                 CallHandler callHandler = new CallHandler();
 //                Client client = new Client("192.168.1.62", 4456, callHandler);  //ip casa Davide
-//                Client client = new Client("100.102.8.0", 4456, callHandler);  //ip unina
 //                Client client = new Client("87.12.207.206", 4456, callHandler);  //ip pubblico Michele
                 Client client = new Client("192.168.43.19", 4456, callHandler);  //hotspot telefono Davide
                 IServerGestoreAccount iservera = (IServerGestoreAccount) client.getGlobal(IServerGestoreAccount.class);

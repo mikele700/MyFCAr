@@ -31,11 +31,15 @@ public class ListaConfigurazioniActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_configurazioni);
 
+        final IGestoreAccount gestoreAccount = GestoreAccount.getInstance();
         ImageButton button = (ImageButton) findViewById(R.id.indietro2);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(getApplicationContext(),AccountActivity.class);
+                Bundle data = new Bundle();
+                data.putString("email", gestoreAccount.getAccount().getEmail());
+                i.putExtras(data);
                 startActivity(i);
             }
         });
@@ -45,7 +49,6 @@ public class ListaConfigurazioniActivity extends AppCompatActivity {
 //        List list_set = new ArrayList();
         List<Map<String, String>> data = new ArrayList<Map<String, String>>();
 
-        IGestoreAccount gestoreAccount = GestoreAccount.getInstance();
         final List<Configurazione> lista_configurazioni = gestoreAccount.getConfigurazioneAccount();
 
 //        for (int i = 0; i < lista_configurazioni.size(); i++) {
