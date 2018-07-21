@@ -23,9 +23,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import business.domain.Auto;
-import business.domain.Configurazione;
 import business.server.iserver.IServerGestoreConfigurazioneAuto;
+import domain.Auto;
+import domain.Configurazione;
 import lipermi.handler.CallHandler;
 import lipermi.net.Client;
 

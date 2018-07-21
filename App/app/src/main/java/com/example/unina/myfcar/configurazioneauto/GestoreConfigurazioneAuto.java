@@ -2,11 +2,11 @@ package com.example.unina.myfcar.configurazioneauto;
 
 import com.example.unina.myfcar.iclient.IGestoreConfigurazioneAuto;
 
-import business.domain.Account;
-import business.domain.Auto;
-import business.domain.Configurazione;
-import business.domain.ConfigurazioneAuto;
 import business.server.iserver.IServerGestoreConfigurazioneAuto;
+import domain.Account;
+import domain.Auto;
+import domain.Configurazione;
+import domain.ConfigurazioneAuto;
 import exception.ConfigurazioneAutoInesistente;
 import exception.ServerError;
 
@@ -27,7 +27,7 @@ public class GestoreConfigurazioneAuto implements IGestoreConfigurazioneAuto{
     }
 
     @Override
-    public String associaAuto(Account account, Auto auto, Configurazione configurazione,IServerGestoreConfigurazioneAuto server) {
+    public String associaAuto(Account account, Auto auto, Configurazione configurazione, IServerGestoreConfigurazioneAuto server) {
         // TODO Auto-generated method stub
         ConfigurazioneAuto ca;
         String s = null;

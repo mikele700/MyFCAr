@@ -2,14 +2,13 @@ package com.example.unina.myfcar.account;
 
 import com.example.unina.myfcar.iclient.IGestoreAccount;
 
-import java.security.AccessControlException;
 import java.util.List;
 
-import business.domain.Account;
-import business.domain.Auto;
-import business.domain.Configurazione;
-import business.domain.ConfigurazioneAuto;
 import business.server.iserver.IServerGestoreAccount;
+import domain.Account;
+import domain.Auto;
+import domain.Configurazione;
+import domain.ConfigurazioneAuto;
 import exception.AccountInesistente;
 import exception.ServerError;
 

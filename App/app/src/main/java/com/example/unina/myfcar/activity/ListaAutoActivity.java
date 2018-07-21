@@ -15,7 +15,8 @@ import com.example.unina.myfcar.iclient.IGestoreAccount;
 import java.util.ArrayList;
 import java.util.List;
 
-import business.domain.Auto;
+import domain.Auto;
+
 
 public class ListaAutoActivity extends AppCompatActivity {
 

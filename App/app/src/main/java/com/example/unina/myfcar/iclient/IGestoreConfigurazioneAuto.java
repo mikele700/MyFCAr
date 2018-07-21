@@ -1,9 +1,9 @@
 package com.example.unina.myfcar.iclient;
 
-import business.domain.Account;
-import business.domain.Auto;
-import business.domain.Configurazione;
 import business.server.iserver.IServerGestoreConfigurazioneAuto;
+import domain.Account;
+import domain.Auto;
+import domain.Configurazione;
 
 /**
  * Created by Davide on 13/07/2018.

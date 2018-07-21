@@ -19,10 +19,11 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import business.domain.Configurazione;
-import business.domain.Setting;
-import business.domain.SettingOptional;
-import business.domain.SettingSerie;
+import domain.Configurazione;
+import domain.Setting;
+import domain.SettingOptional;
+import domain.SettingSerie;
+
 
 public class ListaConfigurazioniActivity extends AppCompatActivity {
 

@@ -17,9 +17,8 @@ import com.example.unina.myfcar.iclient.IGestoreAccount;
 import java.util.ArrayList;
 import java.util.List;
 
-import business.domain.Account;
-import business.domain.Auto;
-import business.domain.ConfigurazioneAuto;
+import domain.Auto;
+import domain.ConfigurazioneAuto;
 
 
 public class ConfigurazioniAutoActivity extends AppCompatActivity {
