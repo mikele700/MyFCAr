@@ -5,10 +5,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import business.domain.Account;
-import business.domain.Auto;
-import business.domain.Configurazione;
-import business.domain.ConfigurazioneAuto;
+import domain.Account;
+import domain.Auto;
+import domain.Configurazione;
+import domain.ConfigurazioneAuto;
 import exception.ConfigurazioneAutoInesistente;
 import exception.ServerError;
 

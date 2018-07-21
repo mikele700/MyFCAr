@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.Map;
 
-import business.domain.Account;
+import domain.Account;
 import exception.AccountInesistente;
 import exception.ServerError;
 

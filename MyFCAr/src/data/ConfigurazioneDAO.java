@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import business.domain.Account;
-import business.domain.Configurazione;
+import domain.Account;
+import domain.Configurazione;
 import exception.ServerError;
 
 public class ConfigurazioneDAO {

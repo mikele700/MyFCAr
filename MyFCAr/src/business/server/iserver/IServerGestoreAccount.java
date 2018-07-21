@@ -1,6 +1,6 @@
 package business.server.iserver;
 
-import business.domain.Account;
+import domain.Account;
 import exception.*;
 
 public interface IServerGestoreAccount {

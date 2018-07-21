@@ -1,11 +1,11 @@
 package business.client.configurazioneauto;
 
 import business.client.iclient.IGestoreConfigurazioneAuto;
-import business.domain.Account;
-import business.domain.Auto;
-import business.domain.Configurazione;
-import business.domain.ConfigurazioneAuto;
 import business.server.iserver.IServerGestoreConfigurazioneAuto;
+import domain.Account;
+import domain.Auto;
+import domain.Configurazione;
+import domain.ConfigurazioneAuto;
 import exception.ConfigurazioneAutoInesistente;
 import exception.ServerError;
 

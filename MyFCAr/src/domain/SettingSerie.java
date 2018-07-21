@@ -1,4 +1,4 @@
-package business.domain;
+package domain;
 
 public class SettingSerie extends Setting {
 	

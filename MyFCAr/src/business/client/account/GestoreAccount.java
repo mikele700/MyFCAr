@@ -3,11 +3,11 @@ package business.client.account;
 import java.util.List;
 
 import business.client.iclient.IGestoreAccount;
-import business.domain.Account;
-import business.domain.Auto;
-import business.domain.Configurazione;
-import business.domain.ConfigurazioneAuto;
 import business.server.iserver.IServerGestoreAccount;
+import domain.Account;
+import domain.Auto;
+import domain.Configurazione;
+import domain.ConfigurazioneAuto;
 import exception.AccountInesistente;
 import exception.ServerError;
 

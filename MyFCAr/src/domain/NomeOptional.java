@@ -1,4 +1,4 @@
-package business.domain;
+package domain;
 
 import exception.DatoNonValido;
 

@@ -8,11 +8,11 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import business.domain.NomeOptional;
-import business.domain.NomeSerie;
-import business.domain.Setting;
-import business.domain.SettingOptional;
-import business.domain.SettingSerie;
+import domain.NomeOptional;
+import domain.NomeSerie;
+import domain.Setting;
+import domain.SettingOptional;
+import domain.SettingSerie;
 import exception.*;
 
 public class SettingDAO {

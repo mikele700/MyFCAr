@@ -2,8 +2,11 @@ package business.client.iclient;
 
 import java.util.List;
 
-import business.domain.*;
 import business.server.iserver.IServerGestoreAccount;
+import domain.Account;
+import domain.Auto;
+import domain.Configurazione;
+import domain.ConfigurazioneAuto;
 
 public interface IGestoreAccount {
 	

@@ -1,11 +1,11 @@
 package business.server.configurazioneauto;
 
-import business.domain.Account;
-import business.domain.Auto;
-import business.domain.Configurazione;
-import business.domain.ConfigurazioneAuto;
 import business.server.iserver.IServerGestoreConfigurazioneAuto;
 import data.ConfigurazioneAutoDAO;
+import domain.Account;
+import domain.Auto;
+import domain.Configurazione;
+import domain.ConfigurazioneAuto;
 import exception.ConfigurazioneAutoInesistente;
 import exception.ServerError;
 
